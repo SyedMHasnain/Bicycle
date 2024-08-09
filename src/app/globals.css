@@ -3,29 +3,102 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
+  /* --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-end-rgb: 215, 225, 215; */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+#rectangle {
+  content: '';
+  background-color: #f7c17b;
+  position: absolute;
+  width: 420px;
+  right: 0px;
+  top: 660px;
+  /* margin: 0 auto; */
+  display: flex;
+  margin-left: 5%;
+  height: 600px;
+  left: 0;
+  z-index: -1;
+  clip-path: polygon(0 0, 75% 8%, 75% 80%, 0% 100%);
+
 }
+
+
+
+@media only screen and (max-width: 730px) {
+
+  ourcycle{
+    margin-top: 40px;
+   }
+     #rectangle{
+      margin-top: 100px;
+      margin-left: 70px;
+
+     }
+
+    #breakpoint-1 {
+      flex-direction: column;
+
+      align-items: center;
+      
+    }
+    #box-main {
+      width: 100%;
+      justify-content: center;
+    }
+    .mt-32 {
+ 
+    }
+    .textdes{
+      margin-top: 50px;
+    }
+        .cycledes {
+          margin-top: 130px;
+          width: 75%;
+          transition: ease all 0.5s;
+        }
+ 
+}
+
+
+#btn-buy {
+
+  background-color: #242921;
+  /* Green */
+  border: none;
+ 
+  padding: 12px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 5px;
+  cursor: pointer;
+  border-radius:6px;  
+}
+
+
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
+.cycles_text {
+  content: '';
+  position: absolute;
+  width: 180px;
+  height: 1px;
+  background-color: #325662;
+  left: 0px;
+  right: initial;
+  margin: 0 auto;
+  top: 70px;
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;
