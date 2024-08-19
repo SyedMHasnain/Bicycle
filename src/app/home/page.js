@@ -2,11 +2,50 @@
 import React from 'react'
 import Header from '../Components/Header';
 import Slider from '../Components/Slider';
-import Card from '../Components/Card';
 import Footer from '../Components/Footer';
+import Productcard from '../Components/Productcard';
+const products = [
+  {
+    title: "Hummer",
+    heading: "Our Cycles",
+    price: "200",
+    image: "/hum2.png",
+    description:" It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    productdes:
+      "It is a long established fact that a reader will be distracted bythe readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normaldistribution of letters",
+  },
 
-// import v1 from '..//../../public/v1.png';
+  {
+    title: "Chimano",
+    heading: "",
+    price: "206",
+    image: "/kid3.png",
+    description:
+      "",
+    productdes:
+      "It is a long established fact that a reader will be distracted bythe readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normaldistribution of letters",
+  },
 
+  {
+    title: "ferrarri",
+    heading: "",
+    price: "340",
+    image: "/img5.png",
+    description: "",
+    productdes:
+      "It is a long established fact that a reader will be distracted bythe readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normaldistribution of letters",
+  },
+
+  {
+    title: "Fuji",
+    heading: "",
+    price: "220",
+    image: "/img4.png",
+    description:"",
+    productdes:
+      "It is a long established fact that a reader will be distracted bythe readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normaldistribution of letters",
+  },
+];
 
 const Home  = () => {
 
@@ -14,47 +53,20 @@ const Home  = () => {
     <>
       <Header />
       <Slider />
-      <Card
-        description="It is a long established fact that a reader will be distracted by the"
-        title="Chimano"
-        heading="Our Cycles"
-        price="200"
-        productdes="It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that it has a more-or-less normal
-              distribution of letters"
-        image="/hum2.png"
-      />
-      <Card
-        title="Fuji"
-        heading=""
-        price="220"
-        productdes="It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that it has a more-or-less normal
-              distribution of letters"
-        image="/img4.png"
-      />
-      <Card
-        title="Chevorlate"
-        heading=""
-        price="120"
-        productdes="It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that it has a more-or-less normal
-              distribution of letters"
-        image="/img5.png"
-      />
-      <Card
-        title="Kids"
-        heading=""
-        price="100"
-        productdes="It is a long established fact that a reader will be distracted by
-              the readable layout. The
-              point of using Lorem Ipsum is that it has a more-or-less normal
-              distribution of letters"
-        image="/kid3.png"
-      />
+      {
+        products.map((product, index) => (
+          <Productcard
+            key={index}
+            title={product.title}
+            heading={product.heading}
+            price={product.price}
+            image={product.image}
+            description={product.description}
+            productdes={product.productdes}
+          />
+        ))
+      }
+    
       {/* content-container*/}
 
           

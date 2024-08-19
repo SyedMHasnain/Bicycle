@@ -7,6 +7,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        
+        'montserrat': ['Montserrat', 'sans-serif'],
+        'montserrat-bold': ['Montserrat Bold', 'sans-serif'],
+        'montserrat-semibold': ['Montserrat SemiBold', 'sans-serif'],
+        'montserrat-light': ['Montserrat Light', 'sans-serif'],
+        'montserrat-medium': ['Montserrat Medium', 'sans-serif'],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

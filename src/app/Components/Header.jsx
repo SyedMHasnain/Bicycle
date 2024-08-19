@@ -1,25 +1,66 @@
-import React from 'react'
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useState } from "react";
+import { CiMenuFries } from "react-icons/ci";
+import { IoMdClose } from "react-icons/io";
+
 
 const Header = () => {
-      const data = ["Home", "About", "Contact", "Name", "Shop"];
+  const [open, setOpen] = useState(false);
+
+  const data = [
+    { name: "Home", link: "/" },
+    { name: "About", link: "/About" },
+    { name: "Contact", link: "/contact" },
+    { name: "Name", link: "/name" },
+    { name: "Shop", link: "/shop" },
+  ];
+
+  const openNav = () => {
+    setOpen(true);
+  };
+
+  const closeNav = () => {
+    setOpen(false);
+  };
+
   return (
     <>
-      {/* navbar */}
-      <div className="flex-1 relative justify-between p-5 ">
+      {/* Navbar */}
+      <div className="flex-1 fixed top-0 left-0 w-full p-5 bg-transparent z-50">
         <div className="flex justify-between">
-          <h4>Logo</h4>
-          <div className="flex gap-6  ">
-            {/* navigation bar map  */}
-            {data.map((item, index) => {
-              return <h4 key={index}>{item}</h4>;
-            })}
-            {/* navigation bar map End  */}
+          <Image src="/logo.png" alt="Logo" height={100} width={100} />
+          <div className="flex gap-6">
+            <CiMenuFries
+              onClick={openNav}
+              className="navicon w-10 cursor-pointer"
+            />
+            <div
+              id="mySidenav"
+              className={`fixed top-0 right-0 h-full bg-black text-white   transition-all duration-300 
+              ${
+                open ? "w-64" : "w-0"
+              }`}>
+             
+                <IoMdClose  className=" w-10  " onClick={closeNav}/>
+           
+              <div className="mt-5">
+                {data.map((item, index) => (
+                  <Link key={index} href={item.link}>
+                    <h4 className="navbar-link cursor-pointer hover:text-[#f7c17b] hover:underline ">
+                      {item.name}
+                    </h4>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      {/* navbar */}
+      {/* Navbar */}
     </>
   );
-}
+};
 
-export default Header
+export default Header;
