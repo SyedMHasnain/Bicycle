@@ -3,7 +3,7 @@ import Image from "next/image";
 const Productcard = (props) => {
   return (
     <div className="flex-1 ">
-      <div className="m-20 ">
+      <div className="m-10 ">
         <h1 className=" ourcycle text-center text-[5vh] font-semibold ">
           {props.heading}
         </h1>
@@ -47,7 +47,7 @@ const Productcard = (props) => {
                 id="btn-buy"
                 className="text-white font-montserrat
               shadow-xl 
-              shadow-slate-400 font-bold">
+              shadow-slate-400 font-bold hover:text-[#f7c17b]  ">
                 Buy Now
               </button>
               <h4 className="text-slate-800 font-bold">

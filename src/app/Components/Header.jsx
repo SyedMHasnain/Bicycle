@@ -34,21 +34,25 @@ const Header = () => {
           <div className="flex gap-6">
             <CiMenuFries
               onClick={openNav}
-              className="navicon w-10 cursor-pointer"
+              className="navicon w-10 h-8 p-1 bg-
+              rounded-full hover:bg-[#f7c17b]  "
             />
             <div
               id="mySidenav"
               className={`fixed top-0 right-0 h-full bg-black text-white   transition-all duration-300 
-              ${
-                open ? "w-64" : "w-0"
-              }`}>
-             
-                <IoMdClose  className=" w-10  " onClick={closeNav}/>
-           
+              ${open ? "w-64" : "w-0"}`}>
+              <IoMdClose
+                className="w-10 p-1 rounded-full hover:bg-[#f7c17b] hover:text-black
+                ml-2 text-[2vw] mt-5 bg-white text-black"
+                onClick={closeNav}
+              />
+
               <div className="mt-5">
                 {data.map((item, index) => (
                   <Link key={index} href={item.link}>
-                    <h4 className="navbar-link cursor-pointer hover:text-[#f7c17b] hover:underline ">
+                    <h4
+                      className="navbar-link cursor-pointer text-lg ml-5
+                    p-3 hover:text-[#f7c17b] hover:underline ">
                       {item.name}
                     </h4>
                   </Link>
